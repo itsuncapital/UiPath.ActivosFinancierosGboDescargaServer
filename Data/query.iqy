@@ -1,0 +1,16 @@
+WEB
+1
+https://suncapitalmanagement.sharepoint.com/sites/GestinBuzonesOcean/_vti_bin/owssvr.dll?XMLDATA=1&List={B1B5BD46-B0CC-4D95-B8D0-66722F88E03B}&View=5FA3E79A-4981-4E50-83C1-E3040C3865D7&RowLimit=0&RootFolder=
+
+Selection={B1B5BD46-B0CC-4D95-B8D0-66722F88E03B}-5FA3E79A-4981-4E50-83C1-E3040C3865D7
+EditWebPage=
+Formatting=None
+PreFormattedTextToColumns=True
+ConsecutiveDelimitersAsOne=True
+SingleBlockTextImport=False
+DisableDateRecognition=False
+DisableRedirections=False
+SharePointApplication=https://suncapitalmanagement.sharepoint.com/sites/GestinBuzonesOcean/_vti_bin
+SharePointListView=5FA3E79A-4981-4E50-83C1-E3040C3865D7
+SharePointListName={B1B5BD46-B0CC-4D95-B8D0-66722F88E03B}
+RootFolder=

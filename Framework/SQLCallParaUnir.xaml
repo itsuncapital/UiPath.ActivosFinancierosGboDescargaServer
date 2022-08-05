@@ -1,0 +1,108 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SQLCall" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_Documentos" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_DocumentosJoined" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_DocumentosNotToJoin" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,662</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SQLCall_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SQLCall" sap:VirtualizedContainerService.HintSize="376,597" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:DatabaseConnection" Name="dataBaseConnection" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:DatabaseConnect DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="[in_Config(&quot;SQL&quot;).ToString]" DatabaseConnection="[dataBaseConnection]" />
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[out_Documentos]" DisplayName="Execute Query" ExistingDbConnection="[dataBaseConnection]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;SELECT GrupoUnion, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;OrdenUnion, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;ResumenUnion, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;Id, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;IdDelPJ, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;AUTOS, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;Nombre, &quot; + &#xD;&#xA;&#x9;&#x9;&quot;TipoDocumentalSVH, &quot; + &#xD;&#xA;&#x9;&#x9;&quot;EmailIdKey, &quot; + &#xD;&#xA;&#x9;&#x9;&quot;ResumenSolicitud, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;RutaArchivo, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;ErrorDescarga, &quot; +&#xD;&#xA;      &#x9;&quot;FechaDescarga, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;FechaIntentoDescarga, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;ErrorSubidaHRC, &quot; +&#xD;&#xA;&#x9;    &quot;FechaSubidaHRC, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;FechaIntentoSubidaHRC, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;ErrorUnion, &quot; +&#xD;&#xA;&#x9;&#x9;&quot;FechaUnion &quot; +&#xD;&#xA;  &quot;From [&quot; + in_Config(&quot;producDesarSQL&quot;).ToString + &quot;].[dbo].[&quot;+ in_Config(&quot;SQLTabla&quot;).ToString +&quot;]&quot; + &#xD;&#xA;  &quot;where RutaArchivo is not null and FechaUnion is null and FechaSubidaHRC is null &quot; +&#xD;&#xA;   &quot;and FechaIntentoSubidaHRC is null and GrupoUnion &lt;&gt; 0&quot;]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[out_DocumentosJoined]" DisplayName="Execute Query" ExistingDbConnection="[dataBaseConnection]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="[&quot;SELECT GrupoUnion, &quot; +&#xA;&#x9;&#x9;&quot;OrdenUnion, &quot; +&#xA;&#x9;&#x9;&quot;ResumenUnion, &quot; +&#xA;&#x9;&#x9;&quot;Id, &quot; +&#xA;&#x9;&#x9;&quot;IdDelPJ, &quot; +&#xA;&#x9;&#x9;&quot;AUTOS, &quot; +&#xA;&#x9;&#x9;&quot;Nombre, &quot; + &#xA;&#x9;&#x9;&quot;TipoDocumentalSVH, &quot; + &#xA;&#x9;&#x9;&quot;EmailIdKey, &quot; + &#xA;&#x9;&#x9;&quot;ResumenSolicitud, &quot; +&#xA;&#x9;&#x9;&quot;RutaArchivo, &quot; +&#xA;&#x9;&#x9;&quot;ErrorDescarga, &quot; +&#xA;      &#x9;&quot;FechaDescarga, &quot; +&#xA;&#x9;&#x9;&quot;FechaIntentoDescarga, &quot; +&#xA;&#x9;&#x9;&quot;ErrorSubidaHRC, &quot; +&#xA;&#x9;    &quot;FechaSubidaHRC, &quot; +&#xA;&#x9;&#x9;&quot;FechaIntentoSubidaHRC, &quot; +&#xA;&#x9;&#x9;&quot;ErrorUnion, &quot; +&#xA;&#x9;&#x9;&quot;FechaUnion &quot; +&#xA;  &quot;From [&quot; + in_Config(&quot;producDesarSQL&quot;).ToString + &quot;].[dbo].[&quot;+ in_Config(&quot;SQLTabla&quot;).ToString +&quot;]&quot; + &#xA;  &quot; WHERE ErrorDescarga is null and GrupoUnion &lt;&gt; 0 and (ErrorUnion is not null or FechaUnion is not null)&quot;]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[out_DocumentosNotToJoin]" DisplayName="Execute Query" ExistingDbConnection="[dataBaseConnection]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3" Sql="[&quot;SELECT GrupoUnion, &quot; +&#xA;&#x9;&#x9;&quot;OrdenUnion, &quot; +&#xA;&#x9;&#x9;&quot;ResumenUnion, &quot; +&#xA;&#x9;&#x9;&quot;Id, &quot; +&#xA;&#x9;&#x9;&quot;IdDelPJ, &quot; +&#xA;&#x9;&#x9;&quot;AUTOS, &quot; +&#xA;&#x9;&#x9;&quot;Nombre, &quot; + &#xA;&#x9;&#x9;&quot;TipoDocumentalSVH, &quot; + &#xA;&#x9;&#x9;&quot;EmailIdKey, &quot; + &#xA;&#x9;&#x9;&quot;ResumenSolicitud, &quot; +&#xA;&#x9;&#x9;&quot;RutaArchivo, &quot; +&#xA;&#x9;&#x9;&quot;ErrorDescarga, &quot; +&#xA;      &#x9;&quot;FechaDescarga, &quot; +&#xA;&#x9;&#x9;&quot;FechaIntentoDescarga, &quot; +&#xA;&#x9;&#x9;&quot;ErrorSubidaHRC, &quot; +&#xA;&#x9;    &quot;FechaSubidaHRC, &quot; +&#xA;&#x9;&#x9;&quot;FechaIntentoSubidaHRC, &quot; +&#xA;&#x9;&#x9;&quot;ErrorUnion, &quot; +&#xA;&#x9;&#x9;&quot;FechaUnion &quot; +&#xA;  &quot;From [&quot; + in_Config(&quot;producDesarSQL&quot;).ToString + &quot;].[dbo].[&quot;+ in_Config(&quot;SQLTabla&quot;).ToString +&quot;]&quot; + &#xA;  &quot; WHERE ErrorDescarga is null and GrupoUnion = 0&quot;]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <ui:DatabaseDisconnect DatabaseConnection="[dataBaseConnection]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
+  </Sequence>
+</Activity>
