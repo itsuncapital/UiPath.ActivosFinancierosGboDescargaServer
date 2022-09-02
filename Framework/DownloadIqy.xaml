@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010" x:Class="iqy" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ama="clr-namespace:AtoS.MultiPartImagetoPDFConverter.Activities;assembly=AtoS.MultiPartImagetoPDFConverter.Activities" xmlns:be="clr-namespace:BalaReva.EasyDataTable;assembly=BalaReva.EasyDataTable" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:u="clr-namespace:UiPathTeam;assembly=ExcelSheetToImage" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="iqy" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ama="clr-namespace:AtoS.MultiPartImagetoPDFConverter.Activities;assembly=AtoS.MultiPartImagetoPDFConverter.Activities" xmlns:be="clr-namespace:BalaReva.EasyDataTable;assembly=BalaReva.EasyDataTable" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:u="clr-namespace:UiPathTeam;assembly=ExcelSheetToImage" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_fullNameFileLog" Type="InArgument(x:String)" />
@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,13095</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>985,13095</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>iqy_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="108">
@@ -138,6 +138,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -146,7 +147,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="iqy" sap:VirtualizedContainerService.HintSize="995,12990" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="iqy" sap:VirtualizedContainerService.HintSize="1048,13273" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="existFolderToCreate" />
       <Variable x:TypeArguments="sd:DataTable" Name="Dtquery" />
@@ -186,7 +187,7 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Inicio" sap:VirtualizedContainerService.HintSize="953,3838" sap2010:WorkflowViewState.IdRef="Sequence_459">
+    <Sequence DisplayName="Inicio" sap:VirtualizedContainerService.HintSize="1006,3842" sap2010:WorkflowViewState.IdRef="Sequence_459">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -641,7 +642,7 @@
           <InArgument x:TypeArguments="scg:List(x:String)">[New List(of string)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Switch x:TypeArguments="x:Int32" DisplayName="Switch  Descarga por excel (2), o por descarga directa (3)" Expression="[in_action]" sap:VirtualizedContainerService.HintSize="550,200" sap2010:WorkflowViewState.IdRef="Switch`1_6">
+      <Switch x:TypeArguments="x:Int32" DisplayName="Switch  Descarga por excel (2), o por descarga directa (3)" Expression="[in_action]" sap:VirtualizedContainerService.HintSize="550,204" sap2010:WorkflowViewState.IdRef="Switch`1_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -1950,7 +1951,7 @@
         </If.Then>
       </If>
     </Sequence>
-    <Assign sap:VirtualizedContainerService.HintSize="953,60" sap2010:WorkflowViewState.IdRef="Assign_243">
+    <Assign sap:VirtualizedContainerService.HintSize="1006,60" sap2010:WorkflowViewState.IdRef="Assign_243">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[contadorDescargaDirecta]</OutArgument>
       </Assign.To>
@@ -1958,7 +1959,7 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtnew]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="953,375" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtnew]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1006,375" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -1994,21 +1995,21 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="953,533" sap2010:WorkflowViewState.IdRef="TryCatch_81">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1006,812" sap2010:WorkflowViewState.IdRef="TryCatch_81">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="242,306" sap2010:WorkflowViewState.IdRef="Sequence_645">
+        <Sequence sap:VirtualizedContainerService.HintSize="968,585" sap2010:WorkflowViewState.IdRef="Sequence_645">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="926,51" sap2010:WorkflowViewState.IdRef="CommentOut_11">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,237" sap2010:WorkflowViewState.IdRef="Sequence_644">
                 <sap:WorkflowViewStateService.ViewState>
@@ -2036,12 +2037,12 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <Parallel sap2010:Annotation.AnnotationText="Pulsa en aceptar en las tres ventanas emergentes que salen al intentar enviar el correo." DisplayName="Parallel - Enviar correo outlook" sap:VirtualizedContainerService.HintSize="200,123" sap2010:WorkflowViewState.IdRef="Parallel_1">
+          <Parallel sap2010:Annotation.AnnotationText="Pulsa en aceptar en las tres ventanas emergentes que salen al intentar enviar el correo." DisplayName="Parallel - Enviar correo outlook" sap:VirtualizedContainerService.HintSize="926,402" sap2010:WorkflowViewState.IdRef="Parallel_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Sequence sap:VirtualizedContainerService.HintSize="376,325" sap2010:WorkflowViewState.IdRef="Sequence_641">
@@ -2051,7 +2052,7 @@
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Se van a descargar &quot; + (contadorDescargaDirecta - 1).ToString + &quot; documentos&quot;]" DisplayName="Send Outlook Mail" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Total descarga Directa dia: &quot; + datetime.Now.ToString(&quot;dd-MM-yyyy&quot;)]" To="[in_Config(&quot;mailRecipient&quot;).ToString]">
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Se van a descargar &quot; + (contadorDescargaDirecta).ToString + &quot; documentos&quot;]" DisplayName="Send Outlook Mail" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Total descarga Directa dia: &quot; + datetime.Now.ToString(&quot;dd-MM-yyyy&quot;)]" To="[in_Config(&quot;mailRecipient&quot;).ToString]">
                 <ui:SendOutlookMail.Files>
                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="8" />
                 </ui:SendOutlookMail.Files>
