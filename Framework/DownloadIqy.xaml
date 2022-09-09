@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>985,13095</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,15865</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>iqy_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="108">
@@ -147,7 +147,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="iqy" sap:VirtualizedContainerService.HintSize="1048,13273" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="iqy" sap:VirtualizedContainerService.HintSize="1048,15800" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="existFolderToCreate" />
       <Variable x:TypeArguments="sd:DataTable" Name="Dtquery" />
@@ -187,14 +187,14 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Inicio" sap:VirtualizedContainerService.HintSize="1006,3842" sap2010:WorkflowViewState.IdRef="Sequence_459">
+    <Sequence DisplayName="Inicio" sap:VirtualizedContainerService.HintSize="1006,6314" sap2010:WorkflowViewState.IdRef="Sequence_459">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Dtquery.Rows.Count &lt; intLineasIQY]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="550,1419" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_30">
+      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Dtquery.Rows.Count &lt; intLineasIQY]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="931,1419" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_30">
         <ui:InterruptibleDoWhile.Body>
           <Sequence sap:VirtualizedContainerService.HintSize="514,1214" sap2010:WorkflowViewState.IdRef="Sequence_567">
             <sap:WorkflowViewStateService.ViewState>
@@ -342,14 +342,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InterruptibleDoWhile>
-      <ui:WriteCell Cell="B13" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="550,115" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Input_Parameters" Text="[Dtquery.Rows.Count.ToString]" WorkbookPath="Data\Input\Config.xlsx">
+      <ui:WriteCell Cell="B13" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="931,115" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Input_Parameters" Text="[Dtquery.Rows.Count.ToString]" WorkbookPath="Data\Input\Config.xlsx">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsPinned">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:WriteCell>
-      <TryCatch DisplayName="Try Catch call SQL" sap:VirtualizedContainerService.HintSize="550,339" sap2010:WorkflowViewState.IdRef="TryCatch_44">
+      <TryCatch DisplayName="Try Catch call SQL" sap:VirtualizedContainerService.HintSize="931,339" sap2010:WorkflowViewState.IdRef="TryCatch_44">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -441,7 +441,7 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtramos el query.iqy para quedarnos solo con lo que queremos tratar" DataTable="[Dtquery]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="550,191" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[DtqueryFiltred]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtramos el query.iqy para quedarnos solo con lo que queremos tratar" DataTable="[Dtquery]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="931,191" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[DtqueryFiltred]" SelectColumnsMode="Keep">
         <ui:FilterDataTable.Filters>
           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="8">
             <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -454,7 +454,7 @@
                 <InArgument x:TypeArguments="x:String">["Fecha Baja Documento"]</InArgument>
               </ui:FilterOperationArgument.Column>
               <ui:FilterOperationArgument.Operand>
-                <InArgument x:TypeArguments="x:Int32">[20]</InArgument>
+                <InArgument x:TypeArguments="x:String">["20"]</InArgument>
               </ui:FilterOperationArgument.Operand>
             </ui:FilterOperationArgument>
             <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
@@ -531,7 +531,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:FilterDataTable>
-      <ui:BuildDataTable DataTable="[dtnew]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="550,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;GrupoUnion&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;OrdenUnion&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ResumenUnion&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Email_x0020_ID_x0020_Key&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nombre&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;500&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tipo_x0020_Documental_x0020_SVH&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;200&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ID_x0020_del_x0020_PJ&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Resumen_x0020_Solicitud&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;6000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;AUTOS&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Fecha_x0020_Baja_x0020_Documento&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Subida_x0020_Directa&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+      <ui:BuildDataTable DataTable="[dtnew]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="931,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;GrupoUnion&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;OrdenUnion&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ResumenUnion&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ID&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Email_x0020_ID_x0020_Key&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nombre&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;500&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tipo_x0020_Documental_x0020_SVH&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;200&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ID_x0020_del_x0020_PJ&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Resumen_x0020_Solicitud&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;6000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;AUTOS&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Fecha_x0020_Baja_x0020_Documento&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Subida_x0020_Directa&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -539,7 +539,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:BuildDataTable>
-      <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtramos el query.iqy para quedarnos solo con lo que queremos tratar" DataTable="[Dtquery]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="550,191" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[dtqueryFiltredIdPjEmpty]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtramos el query.iqy para quedarnos solo con lo que queremos tratar" DataTable="[Dtquery]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="931,191" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[dtqueryFiltredIdPjEmpty]" SelectColumnsMode="Keep">
         <ui:FilterDataTable.Filters>
           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="8">
             <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -595,6 +595,14 @@
                 <InArgument x:TypeArguments="x:String">["No disponible"]</InArgument>
               </ui:FilterOperationArgument.Operand>
             </ui:FilterOperationArgument>
+            <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Fecha Baja Documento"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+              <ui:FilterOperationArgument.Operand>
+                <InArgument x:TypeArguments="x:String">["20"]</InArgument>
+              </ui:FilterOperationArgument.Operand>
+            </ui:FilterOperationArgument>
           </scg:List>
         </ui:FilterDataTable.Filters>
         <ui:FilterDataTable.SelectColumns>
@@ -621,7 +629,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:FilterDataTable>
-      <Assign sap2010:Annotation.AnnotationText="Pasamos la DT donde comparamos los casos a array" sap:VirtualizedContainerService.HintSize="550,102" sap2010:WorkflowViewState.IdRef="Assign_18">
+      <Assign sap2010:Annotation.AnnotationText="Pasamos la DT donde comparamos los casos a array" sap:VirtualizedContainerService.HintSize="931,102" sap2010:WorkflowViewState.IdRef="Assign_18">
         <Assign.To>
           <OutArgument x:TypeArguments="s:String[]">[SqlId]</OutArgument>
         </Assign.To>
@@ -634,7 +642,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="550,60" sap2010:WorkflowViewState.IdRef="Assign_213">
+      <Assign sap:VirtualizedContainerService.HintSize="931,60" sap2010:WorkflowViewState.IdRef="Assign_213">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:List(x:String)">[out_listIdPjEmpty]</OutArgument>
         </Assign.To>
@@ -642,18 +650,18 @@
           <InArgument x:TypeArguments="scg:List(x:String)">[New List(of string)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Switch x:TypeArguments="x:Int32" DisplayName="Switch  Descarga por excel (2), o por descarga directa (3)" Expression="[in_action]" sap:VirtualizedContainerService.HintSize="550,204" sap2010:WorkflowViewState.IdRef="Switch`1_6">
+      <Switch x:TypeArguments="x:Int32" DisplayName="Switch  Descarga por excel (2), o por descarga directa (3)" Expression="[in_action]" sap:VirtualizedContainerService.HintSize="931,2676" sap2010:WorkflowViewState.IdRef="Switch`1_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsPinned">True</x:Boolean>
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence x:Key="2" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_598">
+        <Sequence x:Key="2" sap:VirtualizedContainerService.HintSize="1025,1798" sap2010:WorkflowViewState.IdRef="Sequence_598">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:ReadRange AddHeaders="True" DataTable="[DT_descargarSolo]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="983,87" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;ExcelDescargas&quot;).ToString]">
@@ -823,11 +831,11 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEach>
         </Sequence>
-        <Sequence x:Key="3" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_597">
+        <Sequence x:Key="3" sap:VirtualizedContainerService.HintSize="891,2426" sap2010:WorkflowViewState.IdRef="Sequence_597">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtramos el query.iqy para quedarnos solo con lo que queremos tratar" DataTable="[Dtquery]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="849,191" sap2010:WorkflowViewState.IdRef="FilterDataTable_14" OutputDataTable="[Dtquery]" SelectColumnsMode="Keep">
@@ -843,7 +851,7 @@
                     <InArgument x:TypeArguments="x:String">["Fecha Baja Documento"]</InArgument>
                   </ui:FilterOperationArgument.Column>
                   <ui:FilterOperationArgument.Operand>
-                    <InArgument x:TypeArguments="x:Int32">[20]</InArgument>
+                    <InArgument x:TypeArguments="x:String">["20"]</InArgument>
                   </ui:FilterOperationArgument.Operand>
                 </ui:FilterOperationArgument>
                 <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
@@ -1154,11 +1162,11 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEach>
         </Sequence>
-        <Sequence x:Key="5" DisplayName="Sequence IMPARES" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_635">
+        <Sequence x:Key="5" DisplayName="Sequence IMPARES" sap:VirtualizedContainerService.HintSize="1025,2426" sap2010:WorkflowViewState.IdRef="Sequence_635">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtramos el query.iqy para quedarnos solo con lo que queremos tratar" DataTable="[Dtquery]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="983,191" sap2010:WorkflowViewState.IdRef="FilterDataTable_15" OutputDataTable="[Dtquery]" SelectColumnsMode="Keep">
@@ -1174,7 +1182,7 @@
                     <InArgument x:TypeArguments="x:String">["Fecha Baja Documento"]</InArgument>
                   </ui:FilterOperationArgument.Column>
                   <ui:FilterOperationArgument.Operand>
-                    <InArgument x:TypeArguments="x:Int32">[20]</InArgument>
+                    <InArgument x:TypeArguments="x:String">["20"]</InArgument>
                   </ui:FilterOperationArgument.Operand>
                 </ui:FilterOperationArgument>
                 <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
@@ -1531,11 +1539,11 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEach>
         </Sequence>
-        <Sequence x:Key="6" DisplayName="Sequence PARES" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_639">
+        <Sequence x:Key="6" DisplayName="Sequence PARES" sap:VirtualizedContainerService.HintSize="891,2426" sap2010:WorkflowViewState.IdRef="Sequence_639">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtramos el query.iqy para quedarnos solo con lo que queremos tratar" DataTable="[Dtquery]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="849,191" sap2010:WorkflowViewState.IdRef="FilterDataTable_20" OutputDataTable="[Dtquery]" SelectColumnsMode="Keep">
@@ -1551,7 +1559,7 @@
                     <InArgument x:TypeArguments="x:String">["Fecha Baja Documento"]</InArgument>
                   </ui:FilterOperationArgument.Column>
                   <ui:FilterOperationArgument.Operand>
-                    <InArgument x:TypeArguments="x:Int32">[20]</InArgument>
+                    <InArgument x:TypeArguments="x:String">["20"]</InArgument>
                   </ui:FilterOperationArgument.Operand>
                 </ui:FilterOperationArgument>
                 <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
@@ -1903,7 +1911,7 @@
           </ui:ForEach>
         </Sequence>
       </Switch>
-      <If Condition="[out_listIdPjEmpty.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="550,710" sap2010:WorkflowViewState.IdRef="If_158">
+      <If Condition="[out_listIdPjEmpty.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="931,710" sap2010:WorkflowViewState.IdRef="If_158">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -1995,14 +2003,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1006,812" sap2010:WorkflowViewState.IdRef="TryCatch_81">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1006,867" sap2010:WorkflowViewState.IdRef="TryCatch_81">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="968,585" sap2010:WorkflowViewState.IdRef="Sequence_645">
+        <Sequence sap:VirtualizedContainerService.HintSize="968,640" sap2010:WorkflowViewState.IdRef="Sequence_645">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2037,7 +2045,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <Parallel sap2010:Annotation.AnnotationText="Pulsa en aceptar en las tres ventanas emergentes que salen al intentar enviar el correo." DisplayName="Parallel - Enviar correo outlook" sap:VirtualizedContainerService.HintSize="926,402" sap2010:WorkflowViewState.IdRef="Parallel_1">
+          <Parallel sap2010:Annotation.AnnotationText="Pulsa en aceptar en las tres ventanas emergentes que salen al intentar enviar el correo." DisplayName="Parallel - Enviar correo outlook" sap:VirtualizedContainerService.HintSize="926,457" sap2010:WorkflowViewState.IdRef="Parallel_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -2045,7 +2053,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,325" sap2010:WorkflowViewState.IdRef="Sequence_641">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,380" sap2010:WorkflowViewState.IdRef="Sequence_641">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2063,7 +2071,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:SendOutlookMail>
             </Sequence>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,325" sap2010:WorkflowViewState.IdRef="Sequence_643">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,380" sap2010:WorkflowViewState.IdRef="Sequence_643">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2106,8 +2114,8 @@
                   </ActivityAction>
                 </ui:RepeatNumberOfTimesX.Body>
               </ui:RepeatNumberOfTimesX>
-              <Delay Duration="00:00:06" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_20" />
-              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Click_47" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <Delay Duration="00:00:07" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_20" />
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_47" KeyModifiers="None" MouseButton="BTN_LEFT">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -2125,13 +2133,18 @@
                     </ui:Target.TimeoutMS>
                   </ui:Target>
                 </ui:Click.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </ui:Click>
             </Sequence>
           </Parallel>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_81">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="972,21" sap2010:WorkflowViewState.IdRef="Catch`1_81">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2146,7 +2159,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtnew]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="953,7932" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtnew]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1006,7932" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
